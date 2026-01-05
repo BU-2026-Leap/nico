@@ -13,12 +13,28 @@ unique_students = 0
 
 with open(input_filename) as f:
     reader = csv.DictReader(f)
+    final_score = 0
+    final_num = 0
+    student_ids = []
     for row in reader:
         print(row)
+        # Add all final scores
+        if row['exam_name'] == 'final':
+            final_score += float(row['score'])
+            final_num += 1
+        else:
+            continue
 
-        # TODO: compute average final score
+        # Check for unique student ID
+        if row['student_id'] not in student_ids:
+            student_ids.append(row['student_id'])
+    # Find average
+    average_final = final_score / final_num
+    unique_students = len(student_ids)
 
-        # TODO: unique student count
+    # Print
+    print(f"Number of students: {unique_students}")
+    print(f"Average final: {average_final:.2f}")
 
 if os.path.exists(output_filename):
     os.remove(output_filename)
