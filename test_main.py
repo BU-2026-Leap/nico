@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 
 def test_script_output():
-    repo_root = Path(__file__).resolve().parents[1]
+    repo_root = Path(__file__).resolve().parents[0]
     print("repo: " + str(repo_root))
     output_filename = "output.json"
 
@@ -35,6 +35,6 @@ def test_script_output():
         assert "average_final" in main_output
         assert main_output["average_final"] == '87.33'
 
-        # Check for correct number of students 
+        # Check for correct number of students
         assert "unique_students" in main_output
         assert main_output["unique_students"] == 3
