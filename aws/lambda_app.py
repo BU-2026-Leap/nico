@@ -6,7 +6,7 @@ import base64
 import os
 
 def build_html(stats):
-  img_path = os.path.join(os.environ['LAMBDA_TASK_ROOT'],"common/doggy.JPG")
+  img_path = os.path.join(os.environ['LAMBDA_TASK_ROOT'],"common/funnydog.png")
 
   with open(img_path, "rb") as f:
     data= base64.b64encode(f.read()).decode("utf-8")
