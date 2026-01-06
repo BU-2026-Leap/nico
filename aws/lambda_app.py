@@ -32,7 +32,7 @@ def build_html(stats):
     </style>
   </head>
   <body>
-    <img src="data:image/jpeg;base64,{data}" alt="silly dog">
+    <img src="data:image/png;base64,{data}" alt="silly dog">
     <h1>Hiiiiiiiiiiiiiiiiiiii</h1>
     <h1>Student Scores!</h1>
     <table>
