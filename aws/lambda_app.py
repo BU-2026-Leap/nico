@@ -1,6 +1,6 @@
-from s3_data_fetcher import S3DataFetcher
-from exam_data_processor import ExamDataProcessor
-from contracts import read_and_compute
+from aws.s3_data_fetcher import S3DataFetcher
+from common.exam_data_processor import ExamDataProcessor
+from common.contracts import read_and_compute
 
 def build_html(stats):
     return f"""<!DOCTYPE html>
