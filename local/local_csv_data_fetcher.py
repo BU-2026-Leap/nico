@@ -1,4 +1,4 @@
-from contracts import DataFetcher, ExamScore
+from common.contracts import DataFetcher, ExamScore
 
 import csv
 
@@ -18,10 +18,5 @@ class LocalCSVDataFetcher(DataFetcher):
                     exam_name=row['exam_name'],
                     score=float(row['score'])
                 ))
-                
-        return scores
-
-
-
 
         return scores
