@@ -31,7 +31,7 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest -q
+          PYTHONPATH = pytest -q
 
       - name: Comment success on PR
         if: success() && github.event_name == 'pull_request'
