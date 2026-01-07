@@ -59,7 +59,7 @@ def lambda_handler(event, context):
             "Train Started",
             '''<p>Choose your stop:</p>
                <ul>
-                   <li><a href="/stop/BU">B Line</a></li>
+                   <li><a href="/stop/BU">BU Stop</a></li>
                    <li><a href="/stop/BC">BC Stop</a></li>
                    <li><a href="/stop/Fenway">Fenway</a></li>
                </ul>''',
