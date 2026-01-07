@@ -108,20 +108,4 @@ if __name__ == "__main__":
         print(f"=== Path: {path} ===")
         print(response["body"])
         print("\n\n")
-from flask import Flask, request
-app = Flask(__name__)
 
-@app.route("/", defaults={"path": ""})
-@app.route("/<path:path>")
-def local_router(path):
-    # Construct Lambda-style event
-    event = {
-        "rawPath": "/" + path,
-        "queryStringParameters": request.args.to_dict()
-    }
-    context = {}
-    response = lambda_handler(event, context)
-    return response["body"]
-
-if __name__ == "__main__":
-    app.run(debug=True)
