@@ -6,7 +6,7 @@ IMAGE_MAP = {
     "lunch_yes": "https://your-bucket.s3.amazonaws.com/lunch_yes.jpg",
     "lunch_no": "https://your-bucket.s3.amazonaws.com/lunch_no.jpg",
     "train_starting": "https://your-bucket.s3.amazonaws.com/train.jpg",
-    "B": "https://your-bucket.s3.amazonaws.com/stop_b.jpg",
+    "BU": "https://your-bucket.s3.amazonaws.com/stop_b.jpg",
     "BC": "https://your-bucket.s3.amazonaws.com/stop_bc.jpg",
     "Kenmore": "https://your-bucket.s3.amazonaws.com/stop_kenmore.jpg",
 }
@@ -21,14 +21,14 @@ def lambda_handler(event, context):
 
     if path == "/":
         return html_response(get_page(
-            "🚆 Train Conductor Simulator",
-            '<p>Welcome, Conductor.</p><a href="/intro">Start Shift</a>'
+            "MBTA Train Conductor Simulator (Green Line)",
+            '<p>Welcome, Conductor!</p><a href="/intro">Start Shift</a>'
         ))
 
     elif path == "/intro":
         return html_response(get_page(
             "Shift Briefing",
-            '<p>You are starting a 12-hour shift.</p><a href="/cockpit">Enter Cockpit</a>',
+            '<p>You are starting your regular 16-hour shift.</p><a href="/cockpit">Enter Cockpit</a>',
             image_key="intro"
         ))
 
@@ -44,9 +44,9 @@ def lambda_handler(event, context):
     elif path == "/lunch":
         choice = query.get("choice", "no")
         message = (
-            "Good thinking. You'll need energy."
+            "Aw yeah! Brought my box of Parliments and my medium iced regular from Dunkies!"
             if choice == "yes"
-            else "12 hours without food is risky."
+            else "Cigarette butt again..."
         )
         return html_response(get_page(
             "Lunch Check",
@@ -59,7 +59,7 @@ def lambda_handler(event, context):
             "Train Started",
             '''<p>Choose your stop:</p>
                <ul>
-                   <li><a href="/stop/B">B Line</a></li>
+                   <li><a href="/stop/BU">B Line</a></li>
                    <li><a href="/stop/BC">BC Stop</a></li>
                    <li><a href="/stop/Kenmore">Kenmore</a></li>
                </ul>''',
