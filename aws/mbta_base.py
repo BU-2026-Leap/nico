@@ -6,7 +6,7 @@ IMAGE_MAP = {
     "lunch_yes": "https://mbta-game.s3.us-east-2.amazonaws.com/images/lunch_yes.png",
     "lunch_no": "https://mbta-game.s3.us-east-2.amazonaws.com/images/lunch_no.png",
     "train_starting": "https://your-bucket.s3.amazonaws.com/train.jpg",
-    "BU": "https://your-bucket.s3.amazonaws.com/stop_b.jpg",
+    "BU": "https://mbta-game.s3.us-east-2.amazonaws.com/images/B.png",
     "BC": "https://mbta-game.s3.us-east-2.amazonaws.com/images/Wally.mp4",
     "Fenway": "https://mbta-game.s3.us-east-2.amazonaws.com/images/wallyDead.png",
 }
