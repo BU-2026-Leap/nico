@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>Deeper, still</title>
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function () {
+                // Define clickable areas
+                const areas = document.querySelectorAll('area');
+                // Check in each area
+                areas.forEach(area => {
+                    area.addEventListener('click', function (e) {
+                        console.log(area.alt);
+                        // Define flavortext variable
+                        const text = document.querySelector('.flavortext');
+                        // Define button variable
+                        const button = document.querySelector('#yes');
+
+                        // If area leads to new page
+                        if (area.alt == `exit`) {
+                            text.innerHTML = `Looks like a way out. Leave?`;
+                            button.innerHTML = 'Yes';
+                            button.setAttribute('href', 'exit.html');
+                        }
+
+                        // If area does not lead to new page
+                        else if (area.alt == `water`) {
+                            text.innerHTML = `This must be where the water is coming from.`;
+                            // Set button to default
+                            button.innerHTML = `Go back`;
+                            button.setAttribute('href', 'deeper.html');
+                        }
+                    });
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <h2>Luminous Cavern</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="frame mb-3 mt-3">
+                    <div class="img-container col-auto border border-white">
+                        <img src="images/Deeper-Still.jpg" class="fill" alt="luminous cavern" usemap="#workmap">
+                        <map name="workmap">
+                            <!-- Poly generation done with help from https://www.image-map.net/-->
+                            <area shape="poly" coords="683,353,547,351,325,468,744,461" alt="water">
+                            <area shape="poly" coords="613,181,505,268,573,345,748,347,746,226" alt="exit">
+                        </map>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <p class="flavortext">A bright light shines into this cavern.</p>
+            <a class="button" id="yes" href="deeper.html">
+              Go back
+            </a>
+        </div>
+    </body>
+</html>

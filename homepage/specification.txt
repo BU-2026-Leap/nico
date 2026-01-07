@@ -1,0 +1,41 @@
+This is a short point-and-click adventure. Click on all interactive areas for the full experience (and to see all pages).
+
+HTML Tags used:
+    <meta>
+    <div>
+    <h1>
+    <h2>
+    <h3>
+    <a>
+    <footer>
+    <script>
+    <img>
+    <map>
+    <area>
+    <p>
+
+CSS properties used:
+    background-color
+    border
+    border-radius
+    font-size
+    font-weight
+    line-height
+    padding
+    font-style
+    display
+    width
+    margin
+    color
+    text-decoration
+    cursor
+    font-family
+    text-align
+    height
+    justify-content
+    align-items
+    max-width
+    max-height
+
+JavaScript was used to alter body text, button text, and button hyperlinks on HTML image map clicks.
+Bootstrap was used to for mobile-app style adabtability. Also used to create borders and to center certain elements.

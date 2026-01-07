@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>Flesh Pit</title>
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function () {
+                // Define variables
+                let text = document.querySelector('.flavortext');
+                const button = document.querySelector('#yes');
+                const areas = document.querySelectorAll('area');
+
+                // When "go back" is clicked, trigger new flavortext
+                button.addEventListener('click', function (e1) {
+                    console.log(text.innerHTML);
+                    if (button.innerHTML === 'Go back') {
+                        text.innerHTML = `You can't get back up.`;
+                    }
+                    // If clicked again, generate more text
+                    button.addEventListener('click', function (){
+                        if (text.innerHTML === `You can't get back up.`){
+                            text.innerHTML = `You have to keep going.`;
+                        }
+                    });
+                });
+
+                // Listen for clicks in each area
+                areas.forEach(area => {
+                    area.addEventListener('click', function (e) {
+                        console.log(area.alt);
+
+                        // If area leads to new page
+                        if (area.alt == `crevice`) {
+                            text.innerHTML = `There's a small crevice here. It looks like it might lead somewhere.`;
+                            button.innerHTML = `Squeeze in`;
+                            button.setAttribute('href', 'stuck.html');
+                        }
+
+                        // If area does not lead to new page
+                        else if (area.alt == `floor` || area.alt == `walls`){
+                            button.innerHTML = `Go back`;
+                            // 'Go back' does not trigger new page
+                            button.removeAttribute('href');
+                            // Specific flavortext for each area
+                            if (area.alt == `floor`){
+                            text.innerHTML = `The ground seeps out a strange ooze where you step.`;
+                            }
+                            else if (area.alt == `walls`) {
+                                text.innerHTML = `The walls glisten slightly when struck by the light from your helmet. They look soft and smooth.`;
+                            }
+                        }
+                    });
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <h2>Flesh Pit</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="frame mb-3 mt-3">
+                    <div class="col-auto border border-white">
+                        <img src="images/FleshCave.jpg" class="img-fluid w-100" alt="Flesh Pit" usemap="#workmap">
+                        <map name="workmap">
+                            <!--MAKE CREVICE AREA-->
+                            <area shape="circle" coords="270,160,50" alt="crevice">
+                            <area shape="rect" coords="200, 215, 550, 450" alt="floor">
+                            <area shape="rect" coords="0, 0, 125, 350" alt="walls">
+                            <area shape="rect" coords="575, 0, 724, 350" alt="walls">
+                        </map>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="w-75 mx-auto flex">
+            <p class="flavortext">You fall into a strange pit. The air is stale and rank.</p>
+            <a class="button" id="yes">Go back</a>
+        </div>
+    </body>
+</html>
