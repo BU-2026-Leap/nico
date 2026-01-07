@@ -1,14 +1,14 @@
 from aws.layouts import html_response
 
 IMAGE_MAP = {
-    "intro": "https://your-bucket.s3.amazonaws.com/intro.jpg",
-    "cockpit": "https://your-bucket.s3.amazonaws.com/cockpit.jpg",
-    "lunch_yes": "https://your-bucket.s3.amazonaws.com/lunch_yes.jpg",
-    "lunch_no": "https://your-bucket.s3.amazonaws.com/lunch_no.jpg",
+    "intro": "https://mbta-game.s3.us-east-2.amazonaws.com/images/Green+line.png",
+    "cockpit": "https://mbta-game.s3.us-east-2.amazonaws.com/images/train_starting.png",
+    "lunch_yes": "https://mbta-game.s3.us-east-2.amazonaws.com/images/lunch_yes.png",
+    "lunch_no": "https://mbta-game.s3.us-east-2.amazonaws.com/images/lunch_no.png",
     "train_starting": "https://your-bucket.s3.amazonaws.com/train.jpg",
     "BU": "https://your-bucket.s3.amazonaws.com/stop_b.jpg",
-    "BC": "https://your-bucket.s3.amazonaws.com/stop_bc.jpg",
-    "Kenmore": "https://your-bucket.s3.amazonaws.com/stop_kenmore.jpg",
+    "BC": "https://mbta-game.s3.us-east-2.amazonaws.com/images/Wally.mp4",
+    "Fenway": "https://mbta-game.s3.us-east-2.amazonaws.com/images/wallyDead.png",
 }
 
 def get_page(title, content, image_key=None):
@@ -61,7 +61,7 @@ def lambda_handler(event, context):
                <ul>
                    <li><a href="/stop/BU">B Line</a></li>
                    <li><a href="/stop/BC">BC Stop</a></li>
-                   <li><a href="/stop/Kenmore">Kenmore</a></li>
+                   <li><a href="/stop/Fenway">Fenway</a></li>
                </ul>''',
             image_key="train_starting"
         ))
