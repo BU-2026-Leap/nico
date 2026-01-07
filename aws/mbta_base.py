@@ -5,10 +5,10 @@ IMAGE_MAP = {
     "cockpit": "https://mbta-game.s3.us-east-2.amazonaws.com/images/train_starting.png",
     "lunch_yes": "https://mbta-game.s3.us-east-2.amazonaws.com/images/lunch_yes.png",
     "lunch_no": "https://mbta-game.s3.us-east-2.amazonaws.com/images/lunch_no.png",
-    "train_starting": "https://mbta-game.s3.us-east-2.amazonaws.com/images/train_starting.png",
+    "train_starting": "https://mbta-game.s3.us-east-2.amazonaws.com/images/Kenmore.png",
     "BU": "https://mbta-game.s3.us-east-2.amazonaws.com/images/B.png",
     "BC": "https://mbta-game.s3.us-east-2.amazonaws.com/images/BC.png",
-    "Fenway": "https://mbta-game.s3.us-east-2.amazonaws.com/images/wallyDead.png",
+    "Fenway": "https://mbta-game.s3.us-east-2.amazonaws.com/images/Fenway.png",
 }
 
 def get_page(title, content, image_key=None):
